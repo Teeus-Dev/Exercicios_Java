@@ -1,6 +1,6 @@
 package application;
 
-import entities.Product;
+import entities.Triangle;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -12,36 +12,33 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product = new Product();
+        Triangle x, y;
+        x = new Triangle();
+        y = new Triangle();
 
-        System.out.println("Nome do produto");
-        System.out.print("Nome: ");
-        product.name = sc.nextLine();
+        System.out.println("Favor informar os dados do Triangulo X: ");
+        x.a = sc.nextDouble();
+        x.b = sc.nextDouble();
+        x.c = sc.nextDouble();
 
-        System.out.println("Preço do produto");
-        product.price = sc.nextDouble();
+        System.out.println("Favor informar os dados do Triangulo Y: ");
+        y.a = sc.nextDouble();
+        y.b = sc.nextDouble();
+        y.c = sc.nextDouble();
 
-        System.out.println("Quantidade do produto");
-        product.quantity = sc.nextInt();
+        double areaX = x.area();
+        double areaY = y.area();
 
-        System.out.println();
-        System.out.println("Product data: " + product);
+        System.out.printf("O valor da area do Triangulo X eh: %.4f%n", areaX);
+        System.out.printf("O valor da area do Triangulo Y eh: %.4f%n", areaY);
 
-        System.out.print("Enter the number of products to be added in stock: ");
-        int quantity = sc.nextInt();
-        product.addProducts(quantity);
-
-        System.out.println();
-        System.out.println("Updated data: " + product);
-
-        System.out.println();
-        System.out.println("Enter the number of products to be removed from stock: ");
-        quantity = sc.nextInt();
-        product.removeProducts(quantity);
-
-        System.out.println();
-        System.out.println("Updated data: " + product);
+        if (areaX > areaY) {
+            System.out.println("O trinagulo X é maior que o Y !!");
+        } else {
+            System.out.println("O trinagulo Y é maior que o X !!");
+        }
 
         sc.close();
+
     }
 }
