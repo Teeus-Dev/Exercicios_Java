@@ -1,6 +1,6 @@
 package application;
 
-import entities.Student;
+import entities.Calculator;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -12,28 +12,15 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Student student = new Student();
+        System.out.print("Enter radius: ");
+        double radius = sc.nextDouble();
 
-        System.out.println("Nome do aluno: ");
-        student.name = sc.nextLine();
+        double c = Calculator.circumference(radius);
 
-        System.out.println("Primeira nota do aluno: ");
-        student.point1 = sc.nextDouble();
+        double v = Calculator.volume(radius);
 
-        System.out.println("Segunda nota do aluno: ");
-        student.point2 = sc.nextDouble();
-
-        System.out.println("Terceira nota do aluno: ");
-        student.point3 = sc.nextDouble();
-
-        System.out.printf("FINAL GRADE: %.2f%n", student.finalGrade());
-
-        if (student.finalGrade() >= 60.0) {
-            System.out.printf("PASS");
-        } else {
-            System.out.println("FAILED");
-            System.out.printf("MISSING %.2f", student.missingPoint());
-        }
-        sc.close();;
+        System.out.printf("Circumference: %.2f%n", c);
+        System.out.printf("Volume: %.2f%n", v);
+        System.out.printf("PI value: %.2f%n", Calculator.PI);
     }
 }
