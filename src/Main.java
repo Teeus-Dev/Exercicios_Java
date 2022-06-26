@@ -19,8 +19,9 @@ public class Main {
         name = scan.next();
 
         if (name.equals("0")) break;
-            System.out.println("Idade? ");
-            idade = scan.nextInt();
+
+        System.out.println("Idade? ");
+        idade = scan.nextInt();
 
         }
         System.out.println("Continuna");
