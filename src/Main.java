@@ -1,25 +1,29 @@
 import java.util.Scanner;
 
 /*
-Faça um programa que peça uma nota, entre zero e dez.
-Mostre uma mensagem caso o valor seja inválido
-e continue pedindo até que o usuário informe um valor válido.
+Faça um programa que leia 5 números e informe o maior
+número e a média desses números.
 */
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int nota;
+        int numero;
+        int soma = 0;
+        int maior = 0;
+        int count = 0;
 
-        System.out.println("Nota entre 0 e 10");
-        nota = sc.nextInt();
+        do {
+            System.out.println("Digite o número");
+            numero = sc.nextInt();
+            soma += numero;
+            if (numero > maior)
+                    maior = numero;
+            count ++;
+        } while (count < 5);
 
-        while (nota > 10 || nota < 0 ) {
-            System.out.println("Valor inválido, favor informar uma nota válida entre 0 e 10");
-            nota = sc.nextInt();
-        }
-
-        System.out.println("Continua...");
+        System.out.println("Maior " + maior);
+        System.out.println("Media " + soma/5);
     }
 }
