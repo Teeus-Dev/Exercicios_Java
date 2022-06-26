@@ -1,34 +1,28 @@
 import java.util.Scanner;
 
 /*
-Faça um programa que peça N números inteiros,
-calcule e mostre a quantidade de números pares
-e a quantidade de números impares.
+Desenvolva um gerador de tabuada,
+capaz de gerar a tabuada de qualquer número inteiro entre 1 a 10.
+O usuário deve informar de qual número ele deseja ver a tabuada.
+A saída deve ser conforme o exemplo abaixo:
+
+Tabuada de 5:
+5 x 1 = 5
+5 x 2 = 10
+...
+5 x 10 = 50
 */
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int quantidadeNumeros;
-        int numero;
-        int quantidadePares = 0, quantidadeImpares = 0;
+        System.out.println("Tabuada de de qual núemro? ");
+        int tabuada = sc.nextInt();
 
-        System.out.println("Quantos números, vc quer calcular?");
-        quantidadeNumeros = sc.nextInt();
-
-        int count = 0;
-        do {
-            System.out.println("Digite o número");
-            numero = sc.nextInt();
-
-            if (numero % 2 == 0) quantidadePares++;
-            else quantidadeImpares++;
-
-            count ++;
-        } while (count < quantidadeNumeros);
-
-        System.out.println("Quantidade de Pares " + quantidadePares);
-        System.out.println("Quantidade Impares " + quantidadeImpares);
+        for (int i = 0; i <= 10 ; i++){
+        System.out.println("Tabuada " + tabuada + " X " + i + " = "
+                + tabuada * i);
+        }
     }
 }
