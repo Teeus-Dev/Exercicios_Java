@@ -1,29 +1,25 @@
 import java.util.Scanner;
 
 /*
-Faça um programa que leia conjuntos de dois valores,
-o primeiro representando o nome do aluno e o segundo representando a sua idade.
-(Pare o programa inserindo o valor 0 no campo nome)
+Faça um programa que peça uma nota, entre zero e dez.
+Mostre uma mensagem caso o valor seja inválido
+e continue pedindo até que o usuário informe um valor válido.
 */
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        Scanner scan = new Scanner(System.in);
+        int nota;
 
-        String name;
-        int idade;
+        System.out.println("Nota entre 0 e 10");
+        nota = sc.nextInt();
 
-        while (true) {
-        System.out.println("Nome? ");
-        name = scan.next();
-
-        if (name.equals("0")) break;
-
-        System.out.println("Idade? ");
-        idade = scan.nextInt();
-
+        while (nota > 10 || nota < 0 ) {
+            System.out.println("Valor inválido, favor informar uma nota válida entre 0 e 10");
+            nota = sc.nextInt();
         }
-        System.out.println("Continuna");
+
+        System.out.println("Continua...");
     }
 }
