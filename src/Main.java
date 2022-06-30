@@ -2,31 +2,32 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*
-Faça um Programa que leia 20 números inteiros aleatórios (entre 0 e 100) armazene-os num vetor.
-Ao final mostre os números e seus sucessores.
+Gere e imprima uma matriz M 4x4 com valores aleatórios entre 0-9
 */
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
         Random random = new Random();
 
-        int[] numerosAleatorios = new int[20];
+        int[][] M = new int[4][4];
 
-        for(int i = 0; i < numerosAleatorios.length; i++) {
-            int numero = random.nextInt(100);
-            numerosAleatorios[i] = numero;
+        for(int i = 0; i < M.length; i++) {
+            for(int j = 0; j < M[i].length; j++) {
+                M[i][j] = random.nextInt(9);
+            }
         }
 
-        System.out.print("Numeros Aleatorios: ");
-        for (int numero : numerosAleatorios) {
-            System.out.print(numero + " ");
+        // pegar a primeira linha e navega em cada elemento da linha,
+
+        System.out.println("Matriz: ");
+        for (int[] linha : M ) {
+            for (int coluna : linha ) {
+                System.out.print(coluna + " ");
+            }
+            // após terminar a primeira linha, vai pular a linha
+            System.out.println();
         }
 
-        System.out.print("\nSucessores dos Numeros Aleatorios: ");
-        for (int numero : numerosAleatorios) {
-            System.out.print((numero + 1) + " ");
-        }
 
     }
 
