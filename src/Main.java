@@ -36,7 +36,7 @@ public class Main {
             if (consoante != null)
             System.out.println(consoante);
         }
-        System.out.println("Quantidade de consoantes: " + quantidadeConsoantes);
+        System.out.println("Quantidade de consoantes:. " + quantidadeConsoantes);
     }
 
 }
