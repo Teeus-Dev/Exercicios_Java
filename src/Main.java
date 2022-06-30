@@ -1,22 +1,28 @@
 import java.util.Scanner;
 
 /*
-Faça um programa que calcule o fatorial de um número inteiro
-fornecido pelo usuário.
-Ex.: 5!= 120 (5 x 4 x 3 x 2 x 1)
+Crie um vetor de 6 números inteiros
+e mostre-os na ordem inversa.
 */
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
-        System.out.println("Fatorial: ");
-        int fatorial = scan.nextInt();
-        int multiplacacao = 1;
+        int[] vetor = {0, -15, 50, 8, 4};
 
-        for (int i = fatorial ; i > 0 ; i-- ){
-            multiplacacao *= i;
+        // Mostrar os valores do vetor
+
+        System.out.print("Vetor: ");
+        int count = 0;
+        while(count < (vetor.length)) {
+            System.out.print(vetor[count] + " ");
+            count++;
         }
-        System.out.println(fatorial + "! = " + multiplacacao);
+        // Começa na ultima posição do vetor e vai lendo decrementalmente
+
+        System.out.print("\nVetor: ");
+        for(int i = (vetor.length - 1); i >= 0 ; i --) {
+            System.out.print(vetor[i] + " ");
+        }
     }
 }
