@@ -1,42 +1,33 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /*
-Faça um Programa que leia um vetor de 6 caracteres,
-e diga quantas consoantes foram lidas;
-Imprima as consoantes.
+Faça um Programa que leia 20 números inteiros aleatórios (entre 0 e 100) armazene-os num vetor.
+Ao final mostre os números e seus sucessores.
 */
-
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        String[] consoantes = new String [6];
-        int quantidadeConsoantes = 0;
+        Random random = new Random();
 
-        int count = 0;
-        do {
-            System.out.println("Letra: ");
-            String letra = scan.next();
+        int[] numerosAleatorios = new int[20];
 
-            if ( !(letra.equalsIgnoreCase("a") |
-                    letra.equalsIgnoreCase("e") |
-                    letra.equalsIgnoreCase("i") |
-                    letra.equalsIgnoreCase("o") |
-                    letra.equalsIgnoreCase("u")) ) {
-                consoantes[count] = letra;
-                quantidadeConsoantes++;
-            }
-
-            count++;
-
-        } while (count < consoantes.length);
-
-        System.out.println("Consoantes: ");
-        for (String consoante : consoantes) {
-            if (consoante != null)
-            System.out.println(consoante);
+        for(int i = 0; i < numerosAleatorios.length; i++) {
+            int numero = random.nextInt(100);
+            numerosAleatorios[i] = numero;
         }
-        System.out.println("Quantidade de consoantes:. " + quantidadeConsoantes);
+
+        System.out.print("Numeros Aleatorios: ");
+        for (int numero : numerosAleatorios) {
+            System.out.print(numero + " ");
+        }
+
+        System.out.print("\nSucessores dos Numeros Aleatorios: ");
+        for (int numero : numerosAleatorios) {
+            System.out.print((numero + 1) + " ");
+        }
+
     }
 
 }
