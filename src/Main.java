@@ -1,28 +1,42 @@
 import java.util.Scanner;
 
 /*
-Crie um vetor de 6 números inteiros
-e mostre-os na ordem inversa.
+Faça um Programa que leia um vetor de 6 caracteres,
+e diga quantas consoantes foram lidas;
+Imprima as consoantes.
 */
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
 
-        int[] vetor = {0, -15, 50, 8, 4};
+        String[] consoantes = new String [6];
+        int quantidadeConsoantes = 0;
 
-        // Mostrar os valores do vetor
-
-        System.out.print("Vetor: ");
         int count = 0;
-        while(count < (vetor.length)) {
-            System.out.print(vetor[count] + " ");
-            count++;
-        }
-        // Começa na ultima posição do vetor e vai lendo decrementalmente
+        do {
+            System.out.println("Letra: ");
+            String letra = scan.next();
 
-        System.out.print("\nVetor: ");
-        for(int i = (vetor.length - 1); i >= 0 ; i --) {
-            System.out.print(vetor[i] + " ");
+            if ( !(letra.equalsIgnoreCase("a") |
+                    letra.equalsIgnoreCase("e") |
+                    letra.equalsIgnoreCase("i") |
+                    letra.equalsIgnoreCase("o") |
+                    letra.equalsIgnoreCase("u")) ) {
+                consoantes[count] = letra;
+                quantidadeConsoantes++;
+            }
+
+            count++;
+
+        } while (count < consoantes.length);
+
+        System.out.println("Consoantes: ");
+        for (String consoante : consoantes) {
+            if (consoante != null)
+            System.out.println(consoante);
         }
+        System.out.println("Quantidade de consoantes: " + quantidadeConsoantes);
     }
+
 }
