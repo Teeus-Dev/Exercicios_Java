@@ -1,33 +1,31 @@
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
-Gere e imprima uma matriz M 4x4 com valores aleatórios entre 0-9
+Crie uma lista e adicione 7 notas
 */
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Random random = new Random();
+        List<Double> notas = new ArrayList<Double>();
 
-        int[][] M = new int[4][4];
+        double nota = 0.0;
 
-        for(int linha = 0; linha < M.length; linha++) {
-            for(int coluna = 0; coluna < M[linha].length; coluna++) {
-                M[linha][coluna] = random.nextInt(9);
+        System.out.println("Quantas notas vais informar?");
+        int quantidadeNotas = scan.nextInt();
+
+        int count = 0;
+        while (count < quantidadeNotas) {
+            System.out.println("Digite a nota");
+            nota = scan.nextDouble();
+
+            if (nota < 0 || nota > 10) {
+                System.out.println("Nota inválida");
+                break;
             }
+            notas.add(nota);
         }
-
-        // pegar a primeira linha e navega em cada elemento da linha,
-
-        System.out.println("Matriz: ");
-        for (int[] linha : M ) {
-            for (int coluna : linha ) {
-                System.out.print(coluna + " ");
-            }
-            // após terminar a primeira linha, vai pular a linha
-            System.out.println();
-        }
-
 
     }
 
